@@ -1,7 +1,5 @@
-import Clases.Phone
-import Clases.Vehiculo
-import Clases.Person
-import Clases.Mario
+import Clases.*
+
 fun main() {
     println ("-----------Telefono-----------------")
     var myPhone = Phone()
@@ -52,4 +50,31 @@ fun main() {
     println("Vidas: ${player1.vidas}")
     player1.collision("Goomba")
     println("Vidas: ${player1.vidas}")
+    println("---")
+
+    // CLASE 17-10
+    val player2 = Mario() // MAIN
+    for (i in 1..5){
+        if (player2.isAlive){
+            player2.collision("Goomba")
+            println("Te quedan ${player2.getLives()}")
+        }
+
+    }
+
+    println("-------ENEMY-----------")
+
+    val player3 = Mario()
+    if (player3.isAlive){
+        player3.collision("Goomba")
+        println("Te quedan ${player3.getLives()}")
+    }
+
+    println("---")
+
+    val player4 = Mario()
+    player4.collision("Star")
+
+    val newKoopa = Koopa() // MAIN
+    newKoopa.collision("Weapon")
 }
